@@ -1,24 +1,53 @@
 /* 
-Q1) vowels.java
+Q1) Rhombus.java
 import java.util.Scanner;
 
-public class vowels {
-    public static void main(String args[]) {
+public class CharacterRhombus {
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Enter an alphabet: ");
-        char ch = sc.next().toLowerCase().charAt(0);  //
+        // Print your name and roll number
+        System.out.println("Name: Shriyanshu Kashyap");
+        System.out.println("Roll No: 24CSU194");
 
-        if (ch >= 'a' && ch <= 'z') {
-            if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
-                System.out.println(ch + " is a vowel.");
-            } else {
-                System.out.println(ch + " is a consonant."); 
+        while (true) {
+            // DoD1: Ask user for number of rows
+            System.out.print("Enter the number of rows for the rhombus: ");
+            int n = sc.nextInt();
+
+            System.out.print("Enter a character to draw the rhombus: ");
+            char ch = sc.next().charAt(0);
+
+            // Upper half of rhombus
+            for (int i = 1; i <= n; i++) {
+                for (int j = 1; j <= n - i; j++) {
+                    System.out.print(" ");
+                }
+                for (int j = 1; j <= 2 * i - 1; j++) {
+                    System.out.print(ch);
+                }
+                System.out.println();
             }
-        } else {
-            System.out.println("Invalid input. Please enter an alphabet.");
-        }
 
+            // Lower half of rhombus
+            for (int i = n - 1; i >= 1; i--) {
+                for (int j = 1; j <= n - i; j++) {
+                    System.out.print(" ");
+                }
+                for (int j = 1; j <= 2 * i - 1; j++) {
+                    System.out.print(ch);
+                }
+                System.out.println();
+            }
+
+            // DoD2: Ask user if they want to continue
+            System.out.print("Do you want to try another value? (Y/N): ");
+            char choice = sc.next().toUpperCase().charAt(0);
+            if (choice == 'N') {
+                System.out.println("Exiting... Thank you!");
+                break;
+            }
+        }
         sc.close();
     }
 }
@@ -60,7 +89,31 @@ public class quadraticequation {
     }
 }
 
-Q3) PrimeCheck.java
+Q3) vowels.java
+import java.util.Scanner;
+
+public class vowels {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter an alphabet: ");
+        char ch = sc.next().toLowerCase().charAt(0);  //
+
+        if (ch >= 'a' && ch <= 'z') {
+            if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+                System.out.println(ch + " is a vowel.");
+            } else {
+                System.out.println(ch + " is a consonant."); 
+            }
+        } else {
+            System.out.println("Invalid input. Please enter an alphabet.");
+        }
+
+        sc.close();
+    }
+}
+
+Q4) PrimeCheck.java
 import java.util.Scanner;
 
 public class PrimeCheck {
@@ -97,7 +150,7 @@ public class PrimeCheck {
     }
 }
 
-Q4) Fibonacci.java
+Q5) Fibonacci.java
 import java.util.Scanner;
 
 public class Fibonacci {
@@ -126,3 +179,4 @@ public class Fibonacci {
         sc.close();
     }
 }
+*/
