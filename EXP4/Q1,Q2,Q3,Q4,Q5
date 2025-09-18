@@ -71,7 +71,59 @@ class Area {
     }
 }
 
-Q4) PointDemo.java
+Q4) ComplexDemo.java
+import java.util.Scanner;
+class Complex {
+    double real1, imag1;
+    double real2, imag2;
+
+    Complex(double a, double b, double c, double d) {
+        real1 = a;
+        imag1 = b;
+        real2 = c;
+        imag2 = d;
+    }
+
+    void Add() {
+        System.out.println("The sum is: " + (real1 + real2) + " + " + (imag1 + imag2) + "i");
+    }
+
+    void Subtract() {
+        System.out.println("The difference is: " + (real1 - real2) + " + " + (imag1 - imag2) + "i");
+    }
+
+    void Product() {
+        double realPart = (real1 * real2) - (imag1 * imag2);
+        double imagPart = (real1 * imag2) + (imag1 * real2);
+        System.out.println("The product is: " + realPart + " + " + imagPart + "i");
+    }
+}
+
+public class ComplexDemo {
+    public static void main(String args[]) {
+        System.out.println("Name: Shriyanshu Kashyap");
+        System.out.println("Roll No: 24csu194\n");
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter real and imaginary part for first complex number:");
+        double a = sc.nextDouble();
+        double b = sc.nextDouble();
+
+        System.out.println("Enter real and imaginary part for second complex number:");
+        double c = sc.nextDouble();
+        double d = sc.nextDouble();
+
+        Complex c1 = new Complex(a, b, c, d);
+
+        c1.Add();
+        c1.Subtract();
+        c1.Product();
+    }
+}
+
+
+Q5) PointDemo.java
 class Point {
     double x;
     double y;
@@ -133,54 +185,4 @@ public class PointDemo {
     }
 }
 
-Q5) ComplexDemo.java
-import java.util.Scanner;
-class Complex {
-    double real1, imag1;
-    double real2, imag2;
-
-    Complex(double a, double b, double c, double d) {
-        real1 = a;
-        imag1 = b;
-        real2 = c;
-        imag2 = d;
-    }
-
-    void Add() {
-        System.out.println("The sum is: " + (real1 + real2) + " + " + (imag1 + imag2) + "i");
-    }
-
-    void Subtract() {
-        System.out.println("The difference is: " + (real1 - real2) + " + " + (imag1 - imag2) + "i");
-    }
-
-    void Product() {
-        double realPart = (real1 * real2) - (imag1 * imag2);
-        double imagPart = (real1 * imag2) + (imag1 * real2);
-        System.out.println("The product is: " + realPart + " + " + imagPart + "i");
-    }
-}
-
-public class ComplexDemo {
-    public static void main(String args[]) {
-        System.out.println("Name: Shriyanshu Kashyap");
-        System.out.println("Roll No: 24csu194\n");
-
-        Scanner sc = new Scanner(System.in);
-
-        System.out.println("Enter real and imaginary part for first complex number:");
-        double a = sc.nextDouble();
-        double b = sc.nextDouble();
-
-        System.out.println("Enter real and imaginary part for second complex number:");
-        double c = sc.nextDouble();
-        double d = sc.nextDouble();
-
-        Complex c1 = new Complex(a, b, c, d);
-
-        c1.Add();
-        c1.Subtract();
-        c1.Product();
-    }
-}
 */
