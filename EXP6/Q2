@@ -1,34 +1,65 @@
-interface InterfaceA {
-    void methodA();
+public interface GeometricObject {
+    double getPerimeter();
+    double getArea();
 }
 
-interface InterfaceB {
-    void methodB();
+public interface Resizable {
+    void resize(int percent);
 }
 
-interface InterfaceC extends InterfaceA, InterfaceB {
-    void methodC();
-}
+public class Circle implements GeometricObject {
+    protected double radius;
 
-class Demo implements InterfaceC {
-    public void methodA() {
-        System.out.println("Method A implemented");
+    public Circle(double radius) {
+        this.radius = radius;
     }
 
-    public void methodB() {
-        System.out.println("Method B implemented");
+    public double getPerimeter() {
+        return 2 * Math.PI * radius;
     }
 
-    public void methodC() {
-        System.out.println("Method C implemented");
+    public double getArea() {
+        return Math.PI * radius * radius;
+    }
+
+    public void display() {
+        System.out.println("Radius: " + radius);
+        System.out.println("Perimeter: " + getPerimeter());
+        System.out.println("Area: " + getArea());
     }
 }
 
-public class MultipleInterfaceExtendExample {
+public class ResizableCircle extends Circle implements Resizable {
+
+    public ResizableCircle(double radius) {
+        super(radius);
+    }
+
+    public void resize(int percent) {
+        radius = radius * percent / 100.0;
+    }
+
+    public double getPerimeter() {
+        return 2 * Math.PI * radius;
+    }
+
+    public double getArea() {
+        return Math.PI * radius * radius;
+    }
+}
+
+public class Main {
     public static void main(String[] args) {
-        Demo obj = new Demo();
-        obj.methodA();
-        obj.methodB();
-        obj.methodC();
+        System.out.println("---- Circle ----");
+        Circle c = new Circle(5.0);
+        c.display();
+
+        System.out.println("\n---- ResizableCircle ----");
+        ResizableCircle rc = new ResizableCircle(10.0);
+        rc.display();
+
+        System.out.println("\nResizing circle to 50%...");
+        rc.resize(50);
+        rc.display();
     }
 }
