@@ -1,0 +1,31 @@
+// Custom Exception Class
+class MyException extends Exception {
+    private String message;
+
+    // Constructor to accept and store the string argument
+    public MyException(String message) {
+        this.message = message;
+    }
+
+    // Separate function to print the stored string
+    public void showMessage() {
+        System.out.println("Custom Exception Message: " + message);
+    }
+}
+
+// Main class to test the custom exception
+public class MyCustomExceptionDemo {
+    public static void main(String[] args) {
+        try {
+            // Simulate a condition to throw the custom exception
+            throw new MyException("This is a user-defined exception example.");
+
+        } catch (MyException e) {
+            // Call the custom print function
+            e.showMessage();
+
+        } finally {
+            System.out.println("Finally block executed — Program ended normally.");
+        }
+    }
+}
