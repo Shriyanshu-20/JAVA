@@ -1,0 +1,16 @@
+package exercises.java;
+
+public class PackageDemo {
+    public void display() {
+        System.out.println("PackageDemo executed");
+    }
+}
+
+package exercises.java;
+
+public class PackageDemoDriver {
+    public static void main(String[] args) {
+        PackageDemo obj = new PackageDemo();
+        obj.display();
+    }
+}
