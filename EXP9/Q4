@@ -1,0 +1,13 @@
+import java.io.*;
+
+public class SimpleStudentRW {
+    public static void main(String[] args) throws Exception {
+        BufferedWriter bw = new BufferedWriter(new FileWriter("student.txt"));
+        bw.write("1 John 8.5 A");
+        bw.close();
+
+        BufferedReader br = new BufferedReader(new FileReader("student.txt"));
+        System.out.println(br.readLine());
+        br.close();
+    }
+}
