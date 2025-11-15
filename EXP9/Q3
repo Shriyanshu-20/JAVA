@@ -1,0 +1,15 @@
+import java.io.*;
+
+public class SimpleRW {
+    public static void main(String[] args) throws Exception {
+        FileWriter fw = new FileWriter("data.txt");
+        fw.write("Hello File!");
+        fw.close();
+
+        FileReader fr = new FileReader("data.txt");
+        int ch;
+        while ((ch = fr.read()) != -1) System.out.print((char) ch);
+        fr.close();
+    }
+}
+	
