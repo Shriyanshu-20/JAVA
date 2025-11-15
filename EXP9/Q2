@@ -1,0 +1,15 @@
+import java.io.File;
+
+public class ChangePermission {
+    public static void main(String[] args) {
+        File f = new File("sample.txt");
+
+        f.setReadable(true);
+        f.setWritable(true);
+        f.setExecutable(false);
+
+        System.out.println("Read: " + f.canRead());
+        System.out.println("Write: " + f.canWrite());
+        System.out.println("Execute: " + f.canExecute());
+    }
+}
