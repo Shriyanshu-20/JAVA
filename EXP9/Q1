@@ -1,0 +1,23 @@
+import java.io.File;
+
+public class CheckFile {
+    public static void main(String[] args) {
+
+        File f = new File("test.txt");   // <-- file ka naam yahan daalo
+
+        // Check if file exists
+        if (f.exists()) {
+            System.out.println("File exists.");
+
+            // Check type
+            if (f.isFile()) {
+                System.out.println("It is a file.");
+            } else {
+                System.out.println("It is a directory.");
+            }
+
+        } else {
+            System.out.println("File does not exist.");
+        }
+    }
+}
