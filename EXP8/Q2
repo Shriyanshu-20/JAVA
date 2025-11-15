@@ -1,1 +1,17 @@
+public class ExceptionExample {
+    public static void main(String[] args) {
+        try {
+            // Throw an Exception with a message
+            throw new Exception("This is a custom exception message.");
+
+        } catch (Exception e) {
+            // Catch the Exception and display its message
+            System.out.println("Caught Exception: " + e.getMessage());
+
+        } finally {
+            // This block always executes
+            System.out.println("Finally block executed — program ends safely.");
+        }
+    }
+}
 
