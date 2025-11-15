@@ -1,0 +1,69 @@
+// Base exception class (Level 1)
+class BaseException extends Exception {
+    public BaseException(String message) {
+        super(message);
+    }
+}
+
+// Level 2 exception
+class MidLevelException extends BaseException {
+    public MidLevelException(String message) {
+        super(message);
+    }
+}
+
+// Level 3 exception
+class TopLevelException extends MidLevelException {
+    public TopLevelException(String message) {
+        super(message);
+    }
+}
+
+// Base class A
+class A {
+    // Method that throws base-level exception
+    void show() throws BaseException {
+        throw new BaseException("Exception thrown from class A");
+    }
+}
+
+// Derived class B (extends A)
+class B extends A {
+    @Override
+    void show() throws MidLevelException {
+        throw new MidLevelException("Exception thrown from class B");
+    }
+}
+
+// Derived class C (extends B)
+class C extends B {
+    @Override
+    void show() throws TopLevelException {
+        throw new TopLevelException("Exception thrown from class C");
+    }
+}
+
+// Main class
+public class ExceptionHierarchyDemo {
+    public static void main(String[] args) {
+
+        // Upcasting: C object referred by A reference
+        A obj = new C();
+
+        try {
+            obj.show();   // Calls overridden method in C
+
+        } catch (TopLevelException e) {
+            System.out.println("Caught TopLevelException: " + e.getMessage());
+
+        } catch (MidLevelException e) {
+            System.out.println("Caught MidLevelException: " + e.getMessage());
+
+        } catch (BaseException e) {
+            System.out.println("Caught BaseException: " + e.getMessage());
+
+        } finally {
+            System.out.println("Finally block executed. Program completed safely.");
+        }
+    }
+}
