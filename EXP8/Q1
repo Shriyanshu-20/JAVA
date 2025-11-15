@@ -1,0 +1,32 @@
+class CheckArgumentException extends Exception {
+    public CheckArgumentException(String message) {
+        super(message);
+    }
+}
+
+// Main class
+public class CheckArgumentDemo {
+    public static void main(String[] args) {
+        try {
+            // Check if number of arguments is less than 5
+            if (args.length < 5) {
+                throw new CheckArgumentException("Error: Please enter 5 integer arguments.");
+            }
+
+            // Calculate sum of all 5 integers
+            int sum = 0;
+            for (int i = 0; i < 5; i++) {
+                sum += Integer.parseInt(args[i]); // Convert String to int
+            }
+
+            // Display result
+            System.out.println("Sum of the five numbers: " + sum);
+
+        } catch (CheckArgumentException e) {
+            System.out.println(e.getMessage());
+
+        } catch (NumberFormatException e) {
+            System.out.println("Error: Please enter valid integers only.");
+        }
+    }
+}
