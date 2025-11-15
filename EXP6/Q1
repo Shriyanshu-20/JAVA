@@ -31,28 +31,3 @@ public class TestInheritance {
     }
 }
 
-interface Shape {
-    void draw();
-}
-
-interface ColoredShape extends Shape {
-    void color();
-}
-
-class Circle implements ColoredShape {
-    public void draw() {
-        System.out.println("Drawing a circle...");
-    }
-
-    public void color() {
-        System.out.println("Coloring the circle red...");
-    }
-}
-
-public class InterfaceExtendExample {
-    public static void main(String[] args) {
-        Circle c = new Circle();
-        c.draw();
-        c.color();
-    }
-}
